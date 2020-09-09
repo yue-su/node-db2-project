@@ -7,6 +7,9 @@ module.exports = {
       filename: "./data/car-dealer.db3",
     },
     useNullAsDefault: true,
+    migrations: {
+      directory: "./data/migrations",
+    },
   },
 
   staging: {
@@ -28,15 +31,17 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password",
+      host: "postgres://localhost:5432",
+      database: "car-dealer-db",
+      user: "yuesu",
+      password: "923712",
     },
     pool: {
       min: 2,
       max: 10,
     },
     migrations: {
+      directory: "./data/migrations",
       tableName: "knex_migrations",
     },
   },
