@@ -13,3 +13,8 @@ router.get('/:id', (req, res) => {
     db('cars').where('id', req.params.id).then(car => res.status(200).json(car))
 })
 
+
+router.post('/', (req, res) => {
+    db('cars').insert(req.body).then(car => res.status(200).json(car))
+})
+
