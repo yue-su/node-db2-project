@@ -6,7 +6,7 @@ const db = require("../data/connnection")
 module.exports = router
 
 router.get("/", (req, res) => {
-  db("cars").then((cars) => res.status(200).json(cars))
+  db("cars").then((cars) => res.status(200).json(cars)).catch(error => console.log(error) )
 })
 
 router.get("/:id", (req, res) => {
